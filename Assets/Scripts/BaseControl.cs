@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseControl : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +17,10 @@ public abstract class BaseControl : MonoBehaviour
         
     }
     protected abstract void Move();
+
+    public virtual void Jump()
+    {
+        
+    }
     
 }

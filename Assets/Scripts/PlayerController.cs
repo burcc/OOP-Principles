@@ -6,6 +6,8 @@ public class PlayerController : BaseControl
 {
     private Rigidbody playerRb;
     private float speed = 40.0f;
+    [SerializeField]private float jumpForce = 10.0f;
+    public bool isOnGround = true;
   
 
 
@@ -21,6 +23,7 @@ public class PlayerController : BaseControl
     void Update()
     {
         Move();
+        Jump();
         
     }
     protected override void Move()
@@ -31,5 +34,13 @@ public class PlayerController : BaseControl
         float turnInput = Input.GetAxis("Horizontal");
         //transform.Translate(Vector3.right * speed * Time.deltaTime * turnInput);
         playerRb.AddForce(transform.right * Time.deltaTime * speed * turnInput);
+    }
+    public override void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //isOnGround = false;
+        }
     }
 }

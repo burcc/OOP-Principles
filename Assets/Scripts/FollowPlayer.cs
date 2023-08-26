@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    public Vector3 offset = new Vector3(0f, 2.4f, -3.3f);
+    public Vector3 offset = new Vector3(160.9f, 28f, 35f);
     // Start is called before the first frame update
     
 

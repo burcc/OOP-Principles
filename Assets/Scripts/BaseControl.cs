@@ -16,5 +16,9 @@ public abstract class BaseControl : MonoBehaviour
         
     }
     protected abstract void Move();
+    public virtual void Jump()
+    {
+
+    }
     
 }

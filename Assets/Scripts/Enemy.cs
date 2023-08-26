@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : BaseControl
 {
     public float speed = 30.0f;
-    public float zRange = 100.0f;
+    
     private Rigidbody enemyRb;
     private GameObject player;
     // Start is called before the first frame update
@@ -27,5 +27,6 @@ public class Enemy : BaseControl
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed);
     }
+   
 
 }
